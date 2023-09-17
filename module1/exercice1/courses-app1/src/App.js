@@ -10,13 +10,15 @@ const App = () => {
   const exercises3 = 14
   const totalPart = 3
   const totalExercises = 3
+  const parts = [{"part": part1, "ex":exercises1},
+                {"part":part2, "ex":exercises2}, 
+                { "part":part3, "ex": exercises3}];
 
   return (
     <div>
       <Header course = {course} />
-      <Content part1 = {part1} exercice1 = {exercises1} 
-       part2 = {part2} exercises2 = {exercises2} part3 = {part3} exercises3 = {exercises3} />
-       <Total totalPart = {totalPart} totalExercises = {totalExercises} />    
+      <Content parts = {parts} />   
+      <Total totalPart = {totalPart} totalExercises = {totalExercises}/> 
     </div>
   )
 }
