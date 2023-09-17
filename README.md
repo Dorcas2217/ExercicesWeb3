@@ -1,12 +1,10 @@
 # ExercicesWeb3
 
-WEB3 Courses
+                                                           WEB3 Courses
 
  * WHat about ? 
 
-It is about to learn to create web app with React Library.
-
-We use two tools for course, Vite and create-react-app
+It is about to learn to create web app with React Library.  We use two tools for course, Vite and create-react-app
 
 The applications started as follows 
 
