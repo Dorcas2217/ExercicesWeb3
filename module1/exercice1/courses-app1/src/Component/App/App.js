@@ -1,6 +1,6 @@
-import Header from 'Component/Header'
-import Content from 'Component/Content'
-import Total from 'Component/Total'
+import Header from 'Component/Header/Header'
+import Content from 'Component/Content/Content'
+import Total from 'Component/Total/Total'
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -11,10 +11,10 @@ const App = () => {
   const part3 = 'State of a component'
   const exercises3 = 14
   const totalPart = 3
-  const totalExercises = 3
-  const parts = [{"part": part1, "ex":exercises1},
-                {"part":part2, "ex":exercises2}, 
-                { "part":part3, "ex": exercises3}];
+  const totalExercises = exercises1 + exercises2 + exercises3
+  const parts = [{ name: part1, ex:exercises1},
+                { name:part2, ex:exercises2}, 
+                { name:part3, ex: exercises3}];
 
   return (
     <div>
