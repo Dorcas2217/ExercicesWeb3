@@ -2,7 +2,7 @@
 
 WEB3 Courses
 
-*WHat about ? 
+ * WHat about ? 
 
 It is about to learn to create web app with React Library.
 
@@ -14,4 +14,4 @@ The applications started as follows
  
 ```npm start```   for create-react-app
 
--We use equally technology like   Node.js & MongoDB.
+We use equally technology like   Node.js & MongoDB.
