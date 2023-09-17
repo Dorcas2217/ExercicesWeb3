@@ -1,11 +1,13 @@
-import { Header, Content, Total } from "./component"
+import Header from './Component/Header'
+import Content from './Component/Content'
+import Total from './Component/Total'
 
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
-  const exercises1 = 10
+  const exercises1 = 90
   const part2 = 'Using props to pass data'
-  const exercises2 = 7
+  const exercises2 = 80
   const part3 = 'State of a component'
   const exercises3 = 14
   const totalPart = 3
