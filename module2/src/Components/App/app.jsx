@@ -3,13 +3,19 @@ import Display from '../Display/Display'
 import Button from '../Button/Button'
 
 const App = () => {
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState( JSON.parse(localStorage.getItem("counter")));
   
     console.log('rendering with counter value', counter)
   
     const  changeCount = (delta) => {
         setCounter(counter + delta);
-    }
+        localStorage.setItem("counter", JSON.stringify(counter + delta )); 
+        /** 
+         *  en fait içi je sui obligé de retient dans le local counter + delta  
+        car counter est une const et donc quand je fais le set il ne change jamais 
+        mais setCounter est toujours important c'est juste qu'il s'agit de 2 états différents
+        */
+        }
   
     return (
       <div>
