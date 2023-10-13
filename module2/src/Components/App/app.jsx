@@ -11,7 +11,7 @@ const App = () => {
         setCounter(counter + delta);
         localStorage.setItem("counter", JSON.stringify(counter + delta )); 
         /** 
-         *  en fait içi je sui obligé de retient dans le local counter + delta  
+         *  en fait içi je sui obligé de retenir dans le local counter + delta  
         car counter est une const et donc quand je fais le set il ne change jamais 
         mais setCounter est toujours important c'est juste qu'il s'agit de 2 états différents
         */
