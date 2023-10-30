@@ -1,3 +1,7 @@
+import React, { useState } from "react";
+import Statistic from "../Statistic";
+import Button from "./Button";
+
 const Loading = () => {
     // save clicks of each button to its own state
     const [good, setGood] = useState(0);
@@ -10,10 +14,12 @@ const Loading = () => {
   
     const handleNeutral = () => {
       setNeutral(neutral + 1);
+
     }
   
     const handleBad = () => {
       setBad(bad + 1);
+      
     }
   
     const moyenne = ((good + neutral + bad) / 3);
@@ -52,4 +58,6 @@ const Loading = () => {
     }
   
     return content;
-}  
+} 
+
+export default Loading
