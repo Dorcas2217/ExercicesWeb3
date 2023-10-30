@@ -6,4 +6,15 @@ return(
 )
 }
 
-export default Button
+const Vote = ({handleVote, text}) =>{
+
+    return(
+    <button onClick={handleVote}> 
+        {text}
+    </button>
+    )
+}
+
+export {
+    Button, Vote
+}
