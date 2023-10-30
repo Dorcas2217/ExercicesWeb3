@@ -1,10 +1,15 @@
 const Statistic = ({text, value}) => {
     return (
         <>
-        <div>
-        {text} ___
-        {value}
-        </div>
+        <table>
+        <tbody>
+        <tr>
+        <td>{text}</td> 
+        <td>--</td> 
+        <td>{value}</td>
+        </tr>
+        </tbody>
+        </table>
         </>
     )
 }
