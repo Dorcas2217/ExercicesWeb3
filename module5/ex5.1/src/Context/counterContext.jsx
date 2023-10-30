@@ -16,6 +16,7 @@ const ProviderWrapper = (props) => {
         setOk(ok - ok ),
         setBad(bad - bad)
     }
+    
 
     const exposedValue = {
         good, increaseGood,

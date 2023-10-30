@@ -6,7 +6,6 @@ import ResetButton from '../Button/ResetButton';
 
 const App = () => {
   return (
-    // à contiuer
       <>
           <h2>Give feedback</h2>
           <GoodButton />
