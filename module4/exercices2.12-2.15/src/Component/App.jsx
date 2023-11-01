@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import PersonForm from './PersonForm'
 import Search from './Search'
 import PersonsDisplay from './PersonsDisplay'
-import Persons from './data'
+import axios from 'axios'
 
 
 const App = () => {
   
-  const [persons, setPersons] = useState([...Persons])
+  const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
 
   const [newNumber, setNewNumber] = useState('')
@@ -21,9 +21,15 @@ const App = () => {
   const handleNumber = (event) => {
     setNewNumber(event.target.value)
   }
-  // it important to notice that you have to work Persons table origin if no the display of the table doesn't work after a research
+  
   useEffect( () => {
+    axios
+  .get('http://localhost:3001/persons')
+  .then(response => {
+    const Persons = response.data
     setPersons(Persons.filter(p => p.name.toLowerCase().includes(toSearch.toLowerCase())))
+    
+  })
   }, [toSearch])
 
   const handleToSearch = (event) => {
