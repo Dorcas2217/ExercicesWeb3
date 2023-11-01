@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
+import PersonForm from './PersonForm'
+import Search from './Search'
+import PersonsDisplay from './PersonsDisplay'
+import Persons from './data'
+
 
 const App = () => {
-  const Persons = [
-    { name: 'Arto Hellas', phone: '040-123456', id: 1 },
-    { name: 'Ada Lovelace', phone: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', phone: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', phone: '39-23-6423122', id: 4 }
-  ]
-  const [persons, setPersons] = useState([])
+  
+  const [persons, setPersons] = useState([...Persons])
   const [newName, setNewName] = useState('')
 
   const [newNumber, setNewNumber] = useState('')
@@ -23,7 +23,7 @@ const App = () => {
   }
   // it important to notice that you have to work Persons table origin if no the display of the table doesn't work after a research
   useEffect( () => {
-    setPersons( Persons.filter(p => p.name.toLowerCase().includes(toSearch.toLowerCase())))
+    setPersons(Persons.filter(p => p.name.toLowerCase().includes(toSearch.toLowerCase())))
   }, [toSearch])
 
   const handleToSearch = (event) => {
@@ -45,25 +45,11 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <div>
-        filter shown with <input type="text" value={toSearch} onChange={handleToSearch} />
-      </div>
-      <form onSubmit={addPerson} >
-        <div>
-          name: <input  value={newName} onChange={handleName} />
-        </div>
-        <div>
-          number <input  value={newNumber} onChange={handleNumber} />
-        </div>
-            <button type="submit">add</button>
-      </form>
+      <Search toSearch = {toSearch} handleToSearch = {handleToSearch} />
+      <PersonForm handleAddPerson = {addPerson} newName={newName} 
+      handleName={handleName} newNumber={newNumber} handleNumber={handleNumber}/>
       <h2>Numbers</h2>
-      <div>
-        {persons.map((person) => 
-        <li key= {person.id} >
-          {person.name} {person.phone}
-        </li> )}
-      </div>
+      <PersonsDisplay persons = {persons}/>
     </div>
   )
 }
