@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const Context = React.createContext(null);
 
 const ProviderWrapper = (props) => {
-  const [vote, setVote] = useState(1);
+ 
 
   const [opinionList, setOpinionList] = useState([
     {
@@ -17,15 +17,18 @@ const ProviderWrapper = (props) => {
   const increaseVote = (id) => {
     const updatedOpinions = opinionList.map(opinion => {
       if (opinion.id === id) {
-        return { ...opinion, nbr_vote: opinion.nbr_vote + 1 };
-      }
+        opinion.nbr_vote += 1;
+      } 
       return opinion;
     });
+    
     setOpinionList(updatedOpinions);
     sortedOpinions();
+    
   }
 
   const addOpinion = (label) => {
+   
     const opinionExisted = opinionList.find(o => o.label === label);
     if (opinionExisted) {
       opinionExisted.nbr_vote++;
@@ -36,7 +39,8 @@ const ProviderWrapper = (props) => {
         label: label,
         nbr_vote: 1
       };
-      setOpinionList([...opinionList, newOpinion]);
+      opinionList.push(newOpinion);
+    
       sortedOpinions();
     }
   }
@@ -47,7 +51,7 @@ const ProviderWrapper = (props) => {
   }
 
   const exposedValue = {
-    vote, increaseVote, addOpinion, opinionList
+    increaseVote, addOpinion, opinionList
   }
 
   return (

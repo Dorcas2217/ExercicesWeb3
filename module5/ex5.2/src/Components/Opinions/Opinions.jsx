@@ -2,15 +2,13 @@ import React, { useContext } from "react";
 import {Context as  OpinonContext } from "../../Context/counterContext";
 
 const Opinions = () => {
-  const { vote, increaseVote } = useContext(OpinonContext);
-  const opignonList = useContext(OpinonContext);
-
+  const { increaseVote, opinionList } = useContext(OpinonContext);
+  
   return (
     <div>
-      {opignonList.map(opi => (
+      {opinionList.map(opi => (
         <div key={opi.id}>
-          <p>Opinion {opi.label} : {vote}</p>
-          <button onClick={increaseVote}>Vote</button>
+          <p>Opinion {opi.label} : {opi.nbr_vote} <button onClick={() => increaseVote(opi.id)} >Vote</button> </p> 
         </div>
       ))}
     </div>

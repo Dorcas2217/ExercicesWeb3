@@ -1,10 +1,11 @@
+import Person from "./Person"
+
 const PersonsDisplay = ({persons}) => {
     return(
         <div>
-        {persons.map((person) => 
-        <li key= {person.id} >
-          {person.name} {person.phone}
-        </li> )}
+        {persons.map((p) => 
+        <Person key={p.id} person={p} />
+        )}
       </div>
     )
 }
