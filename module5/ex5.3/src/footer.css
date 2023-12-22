@@ -1,0 +1,44 @@
+/* footer.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* 100% de la hauteur de la vue */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles généraux pour le footer */
+.footer {
+  padding: 100px 0;
+  width: 100%;
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  max-width: 600px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit; /* Utilisez la couleur héritée pour que la couleur du texte suive le thème */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: auto;
+  text-align: center;
+}
