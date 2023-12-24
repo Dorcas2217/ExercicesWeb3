@@ -17,7 +17,7 @@ const url =
   async function main() {
     try {
       await mongoose.connect(url);
-      console.log('Connected to MongoDB');
+   
   
       const phoneBookSchema = new mongoose.Schema({
         nom: String,
@@ -28,7 +28,7 @@ const url =
   
 
     if (process.argv.length === 3) {
-      console.log('Connected to MongoDB');
+    
     /**
      * Opération de recherche 
      * node mongo.js password 
