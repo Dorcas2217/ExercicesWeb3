@@ -8,6 +8,9 @@ import axios from 'axios'
 const App = () => {
   
   const [persons, setPersons] = useState([])
+
+  //fetch('api/phonebooks').then((res) => res.json()).then((res) => setPersons(res));
+
   const [newName, setNewName] = useState('')
 
   const [newNumber, setNewNumber] = useState('')
@@ -24,10 +27,11 @@ const App = () => {
   
   useEffect( () => {
     axios
-  .get('http://localhost:3001/persons')
+  .get('api/phonebooks')
   .then(response => {
     const Persons = response.data
-    setPersons(Persons.filter(p => p.name.toLowerCase().includes(toSearch.toLowerCase())))
+
+    setPersons(Persons.filter(p => p.nom.toLowerCase().includes(toSearch.toLowerCase())))
     
   })
   }, [toSearch])
@@ -39,11 +43,10 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
     const newPerson = {
-      id: persons.length + 1,
-      name: newName,
+      nom: newName,
       number: newNumber
     }
-    axios.post('http://localhost:3001/persons', newPerson)
+    axios.post('api/phonebooks/add', newPerson)
     .then(response => {
       setPersons(persons.concat(response.data))
       setNewName('')
