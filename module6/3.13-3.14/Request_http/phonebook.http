@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:3001
+
+### Get all the phonebooks
+GET {{baseUrl}}/phonebooks
+
+### Add a new phonebook Member
+POST {{baseUrl}}/phonebooks/add
+Content-Type: application/json
+
+{
+    "nom": "adeline",
+    "number":"745-8795666"
+}
+
+
+
+
