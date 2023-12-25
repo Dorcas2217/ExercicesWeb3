@@ -1,3 +1,5 @@
+// Only for 3.12 
+
 const mongoose = require('mongoose');
 
 if (process.argv.length < 3) {
