@@ -31,4 +31,19 @@ app.post("/phonebooks/add", async (req, res) => {
     res.json(saved)
   })
 
+  app.get('phonebooks/:id', (request, response) => {
+    Phonebook.findById(request.params.id)
+      .then(phone => { 
+        if (phone) {
+          response.json(phone)
+        } else {
+          response.status(404).end()
+        }
+      })
+      .catch(error => {
+        console.log(error)
+        response.status(400).send({ error: 'malformatted id' })
+      })
+  })
+
 })

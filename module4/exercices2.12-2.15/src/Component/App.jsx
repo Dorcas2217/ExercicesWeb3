@@ -9,8 +9,6 @@ const App = () => {
   
   const [persons, setPersons] = useState([])
 
-  //fetch('api/phonebooks').then((res) => res.json()).then((res) => setPersons(res));
-
   const [newName, setNewName] = useState('')
 
   const [newNumber, setNewNumber] = useState('')
